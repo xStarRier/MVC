@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+//MODEL
+let name = "..her kommer et navn";
+let place = "..her kommer et sted";
+let food = "..her kommer et matrett";
+
+//VIEW
+setFields()
+function setFields(){
+let html = `
+<div>Hei jeg heter</div>
+<div id="namediv">${name}<div>
+</div>
+
+<div class="group">
+    <div>Jeg bor i</div>
+    <div id="placediv">${place}</div>
+    </div>
+    
+<div class="group">
+    <div>Min favorittmat er</div>
+    <div id="fooddiv">${food}</div>
+    </div>
+<button onclick="setFields()">Klikk her for å sette verdier</button>
+<input type="text" onchange="setName(this.value)">
+<input type="text" onchange="setPlace(this.value)">
+<input type="text" onchange="setFood(this.value)">`
+
+
+document.getElementById('app').innerHTML = html;
+
+/*document.getElementById("namediv").innerHTML = name;
+document.getElementById("placediv").innerHTML = place;
+document.getElementById("fooddiv").innerHTML = food;
+*/
+;}
+//CONTROLLER
+function setName(nameInput){
+name = nameInput;
+setFields()
+}
+function setPlace(placeInput){
+place = placeInput;
+
+}
+function setFood(foodInput){
+food = foodInput;   
+
+}
+
+
+
+
+</script>
+</body>
+</html>
